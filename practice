@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang=“en”>
+
+<head>
+    <meta charset=“UTF-8">
+  <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+  <meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
+  <title>World C02 Emissions</title>
+  <!-- Leaflet CSS -->
+  <link rel=“stylesheet” href=“https://unpkg.com/leaflet@1.6.0/dist/leaflet.css”
+  integrity=“sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==”
+  crossorigin=“” />
+
+  <!-- JQuery CSS (from template...we can remove once we get going further) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+
+  <!-- Bootstrap CSS (from example)-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chartist CSS -->
+  <link rel=“stylesheet” href=“https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css”>
+  <script src=“https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js”></script>
+  <script src=“https://code.jquery.com/jquery-3.6.1.min.js”></script>
+</head>
+
+<body>
+  <canvas id="c" width="500" height="500"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById("c").getContext("2d");
+    var data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [{
+        label: "My First dataset",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: [65, 59, 80, 81, 56, 55, 40]
+      }, {
+        label: "My Second dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [28, 48, 40, 19, 86, 27, 90]
+      }]
+    };
+    var MyNewChart = new Chart(ctx).Line(data);
+  </script>
+</body>
+
+</html>
